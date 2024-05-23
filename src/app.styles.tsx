@@ -4,7 +4,6 @@ export const GlobalStyle = createGlobalStyle`
     *, *::before, *::after {
         margin: 0;
         padding: 0;
-        border: none;
         font-family: 'Poppins', sans-serif;
 
         box-sizing: border-box;// chrome
@@ -13,8 +12,24 @@ export const GlobalStyle = createGlobalStyle`
         -ms-box-sizing: border-box; // Edge
     }
     body{
-        background-color: black;
+        background-color: white;
     }
+
+    *::before, *::after {
+        border: none;
+    }
+
+    input{
+        border-style: solid;
+    }
+
+
+    button{
+        cursor: pointer;
+        border: none;
+        outline: none;
+    }
+
 
     // to get rid of scrollbars in older versions of browsers
     ::-webkit-scrollbar {
