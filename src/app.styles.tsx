@@ -24,10 +24,11 @@ export const GlobalStyle = createGlobalStyle`
     }
 
 
-    button{
+    button, a{
         cursor: pointer;
         border: none;
         outline: none;
+        text-decoration: none;
     }
 
 

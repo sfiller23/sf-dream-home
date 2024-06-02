@@ -29,6 +29,7 @@ const Banner = styled.img`
 
 const FullScreen = styled.div`
   height: calc(100vh - ${(props) => props.theme.cssConstants.headerHeight});
+  width: 100vw;
 `;
 
 const Home = () => {
