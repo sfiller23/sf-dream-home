@@ -10,7 +10,7 @@ interface FooterListItemProps {
 const FooterListItem = (props: FooterListItemProps) => {
   const { title } = props;
   return (
-    <Inline gutter={"m"}>
+    <Inline justify="start" gap={"m"}>
       <img src={arrowToRight} alt="Arrow-Icon" />
       <Text weight={300} as={Link} to="/" color="textNote" size="footerText">
         {title}

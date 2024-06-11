@@ -37,7 +37,7 @@ const Home = () => {
     <FullScreen>
       <Banner src={bannerImg} alt="main img" />
       <Rows justify="start">
-        <Pad padding="xxl xxl">
+        <Pad $space="xxl xxl">
           <Rows justify="start">
             <Text size="mainTitle" weight={700}>
               We will find a perfect
@@ -48,10 +48,10 @@ const Home = () => {
               difficulties
               <br /> in finding a residence for you
             </Text>
-            <Pad padding="xxl none xxl none">
+            <Pad $space="xxl none xxl none">
               <SearchBar />
             </Pad>
-            <Columns gutter="xxl">
+            <Columns gap="xxl" evenly={false}>
               <Rows justify="start">
                 <Text size="bodyTitle" weight={700}>
                   1500+
@@ -73,12 +73,12 @@ const Home = () => {
         </Pad>
       </Rows>
       <Hcentered>
-        <Rows justify="start" gutter="l">
+        <Rows justify="start" gap="l">
           <Text size="bodyNote" weight={500}>
             Trusted by over 150+ major companies
           </Text>
 
-          <Inline gutter="xxl">
+          <Inline gap="xxl">
             <img src={company1} alt="company1" width="80px" />
             <img src={company2} alt="company2" width="80px" />
             <img src={company3} alt="company3" width="80px" />

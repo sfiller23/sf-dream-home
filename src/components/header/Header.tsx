@@ -25,8 +25,8 @@ const StyledText = styled(Text).attrs({ weight: 500 })``;
 
 const Header = () => {
   return (
-    <StyledHeader as="header" align="center" justify="around">
-      <Columns evenly={false} gutter="l">
+    <StyledHeader as="header" align="center" justify="midSpace">
+      <Columns evenly={false} gap="l">
         <img src={logo} alt="Site logo" />
         <Rows justify="start">
           <Text weight={700} size="headerTitle">
@@ -37,7 +37,7 @@ const Header = () => {
           </Text>
         </Rows>
       </Columns>
-      <Inline align="center" gutter="l">
+      <Inline align="center" gap="l">
         <StyledLink to="/home">
           <StyledText>Home</StyledText>
         </StyledLink>
@@ -54,8 +54,8 @@ const Header = () => {
           <StyledText>Contact</StyledText>
         </StyledLink>
       </Inline>
-      <Columns evenly={false} gutter="l">
-        <Inline align="center" gutter="s">
+      <Columns evenly={false} gap="l">
+        <Inline align="center" gap="s">
           <img src={auth} alt="auth" />
           <StyledLink to="/register">
             <Text>Register</Text>

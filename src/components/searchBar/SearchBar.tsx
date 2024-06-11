@@ -35,7 +35,7 @@ const BarSwitch = styled(SFButton)`
 const SearchBar = () => {
   return (
     <Rows justify="start">
-      <Columns>
+      <Columns evenly>
         <BarSwitch
           radius="10px 0px 0px 0px"
           background={`${THEME.colors.main}`}
@@ -49,7 +49,7 @@ const SearchBar = () => {
         </BarSwitch>
       </Columns>
 
-      <Bar gutter="m" background="white" justify="evenly">
+      <Bar gap="m" background="white" justify="evenSpace">
         <StyledInputWrapper>
           <input type="text" placeholder="test" />
         </StyledInputWrapper>

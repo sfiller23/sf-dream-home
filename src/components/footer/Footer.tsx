@@ -31,13 +31,13 @@ const Separator = styled.hr`
 const Footer = () => {
   return (
     <StyledFooter>
-      <Pad padding="xxl none">
-        <Inline gutter={"l"}>
+      <Pad $space="xxl none">
+        <Inline gap="l">
           <Card>
-            <Pad padding={"l"}>
-              <Inline align="between" justify="between">
+            <Pad $space="l">
+              <Inline align="maxSpace" justify="maxSpace">
                 <img className="main-img" src={house1} alt="house" />
-                <Rows align="between" justify="start">
+                <Rows align="maxSpace" justify="start">
                   <Text size="footerTitle" weight={700}>
                     You need a house
                   </Text>
@@ -56,10 +56,10 @@ const Footer = () => {
             </Button>
           </Card>
           <Card>
-            <Pad padding={"l"}>
-              <Inline align="between" justify="between">
+            <Pad $space="l">
+              <Inline align="maxSpace" justify="maxSpace">
                 <img className="main-img" src={bannerImg} alt="house" />
-                <Rows align="between" justify="start">
+                <Rows align="maxSpace" justify="start">
                   <Text size="footerTitle" weight={700}>
                     Sell your house
                   </Text>
@@ -80,8 +80,8 @@ const Footer = () => {
         </Inline>
       </Pad>
       <Separator />
-      <Columns evenly={false} gutter={"xxl"}>
-        <Rows gutter={"l"} justify="start">
+      <Columns evenly={false} gap="xxl">
+        <Rows gap={"l"} justify="start">
           <Text size="footerTitle" color="white">
             Office Address
           </Text>
@@ -106,7 +106,7 @@ const Footer = () => {
           </Text>
         </Rows>
         <Rows justify="start">
-          <Pad padding="l none">
+          <Pad $space="l none">
             <Text size="footerTitle" color="white">
               Our Company
             </Text>
