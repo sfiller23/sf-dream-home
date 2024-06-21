@@ -9,9 +9,7 @@ export const services: Service[] = [
   {
     title: "About Us",
   },
-  {
-    title: "Our Agents",
-  },
+
   {
     title: "Terms Of Use",
   },

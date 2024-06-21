@@ -10,7 +10,6 @@ import {
 import styled from "styled-components";
 import house from "../../assets/SVG/house.svg";
 import bannerImg from "../../assets/images/banner-img.jpeg";
-import house1 from "../../assets/images/house1.jpeg";
 import Button from "../common/button/Button";
 import Card from "../common/card/Card";
 import Text from "../common/typography/Text";
@@ -32,56 +31,32 @@ const Footer = () => {
   return (
     <StyledFooter>
       <Pad $space="xxl none">
-        <Inline gap="l">
-          <Card>
-            <Pad $space="l">
-              <Inline align="maxSpace" justify="maxSpace">
-                <img className="main-img" src={house1} alt="house" />
-                <Rows align="maxSpace" justify="start">
-                  <Text size="footerTitle" weight={700}>
-                    You need a house
-                  </Text>
-                  <Text size="footerSub" weight={300}>
-                    Tell us your needs, we will give you thousands of
-                    <br /> suggestions for the dream home.
-                  </Text>
-                </Rows>
-              </Inline>
-            </Pad>
-            <Button style={{ height: "40px", width: "200px" }}>
-              <img src={house} alt="house" />
-              <Text size="bodyNote" color="white" weight={500}>
-                Contact Agent
-              </Text>
-            </Button>
-          </Card>
-          <Card>
-            <Pad $space="l">
-              <Inline align="maxSpace" justify="maxSpace">
-                <img className="main-img" src={bannerImg} alt="house" />
-                <Rows align="maxSpace" justify="start">
-                  <Text size="footerTitle" weight={700}>
-                    Sell your house
-                  </Text>
-                  <Text size="footerSub" weight={300}>
-                    We will connect you to thousands of people who
-                    <br /> need to buy a home.
-                  </Text>
-                </Rows>
-              </Inline>
-            </Pad>
-            <Button style={{ height: "40px", width: "200px" }}>
-              <img src={house} alt="house" />
-              <Text size="bodyNote" color="white" weight={500}>
-                Sell Property
-              </Text>
-            </Button>
-          </Card>
-        </Inline>
+        <Card>
+          <Pad $space="l">
+            <Inline align="maxSpace" justify="maxSpace">
+              <img className="main-img" src={bannerImg} alt="house" />
+              <Rows align="maxSpace" justify="start">
+                <Text size="footerTitle" weight={700}>
+                  Sell your house
+                </Text>
+                <Text size="footerSub" weight={300}>
+                  We will connect you to thousands of people who
+                  <br /> need to buy a home.
+                </Text>
+              </Rows>
+            </Inline>
+          </Pad>
+          <Button style={{ height: "40px", width: "200px" }}>
+            <img src={house} alt="house" />
+            <Text size="bodyNote" color="white" weight={500}>
+              Sell Property
+            </Text>
+          </Button>
+        </Card>
       </Pad>
       <Separator />
-      <Columns evenly={false} gap="xxl">
-        <Rows gap={"l"} justify="start">
+      <Columns evenly="false" gap="xxl">
+        <Rows justify="start">
           <Text size="footerTitle" color="white">
             Office Address
           </Text>
@@ -115,7 +90,6 @@ const Footer = () => {
         </Rows>
       </Columns>
       <Separator style={{ marginTop: "1rem" }} />
-
       <Vcentered $minHeight={"5rem"}>
         <Text color="textNote" size="footerText" weight={200}>
           Copyright © 2023 Real estate CP. Designed & Developed by Themesflat

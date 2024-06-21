@@ -51,7 +51,7 @@ const Home = () => {
             <Pad $space="xxl none xxl none">
               <SearchBar />
             </Pad>
-            <Columns gap="xxl" evenly={false}>
+            <Columns gap="xxl" evenly="false">
               <Rows justify="start">
                 <Text size="bodyTitle" weight={700}>
                   1500+
@@ -77,7 +77,6 @@ const Home = () => {
           <Text size="bodyNote" weight={500}>
             Trusted by over 150+ major companies
           </Text>
-
           <Inline gap="xxl">
             <img src={company1} alt="company1" width="80px" />
             <img src={company2} alt="company2" width="80px" />

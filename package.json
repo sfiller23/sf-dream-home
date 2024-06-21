@@ -10,13 +10,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@cman430/sf-component-library": "^1.5.34",
+    "@cman430/sf-component-library": "^1.5.43",
+    "chroma-js": "^2.4.2",
+    "firebase": "^10.12.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.23.1",
+    "react-select": "^5.8.0",
     "styled-components": "^6.1.11"
   },
   "devDependencies": {
+    "@types/chroma-js": "^2.4.4",
     "@types/node": "^20.12.11",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",

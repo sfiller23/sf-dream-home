@@ -1,4 +1,6 @@
 import { ITheme, theme } from "@cman430/sf-component-library";
+import chroma from "chroma-js";
+import { StylesConfig } from "react-select";
 
 export interface DMTheme extends ITheme {
   colors: IThemeColors;
@@ -17,6 +19,7 @@ const CSSConstants: ICSSConstants = {
 export interface IThemeColors {
   icon: string;
   input: string;
+  inputDisabled: string;
   line: string;
   main: string;
   sub: string;
@@ -33,6 +36,7 @@ export interface IThemeColors {
 export const ThemeColors: IThemeColors = {
   icon: "#8E8E93",
   input: "#E5E5EA",
+  inputDisabled: "#f8f7f5",
   line: "#EFEFEF",
   main: "#FFA920",
   sub: "#FFF5E0",
@@ -76,6 +80,88 @@ export const FontSizes: IFontSizes = {
   footerTitle: "1.2rem",
   footerSub: "0.7rem",
   footerTextSub: "0.825rem",
+};
+
+export interface ISelectOption {
+  readonly value: string;
+  readonly label: string;
+  readonly color?: string;
+  readonly isFixed?: boolean;
+  readonly isDisabled?: boolean;
+  readonly rating?: string;
+}
+
+export interface ISelectStyles {
+  searchBarSelect: StylesConfig<ISelectOption>;
+}
+
+export const SelectStyles: ISelectStyles = {
+  searchBarSelect: {
+    control: (styles, { isFocused, isDisabled }) => ({
+      ...styles,
+      backgroundColor: isDisabled
+        ? ThemeColors.inputDisabled
+        : isFocused
+        ? "transparent"
+        : "white", // Change background color on focus
+      borderRadius: 5,
+      borderColor: isFocused ? ThemeColors.main : ThemeColors.border, // Override borderColor on active/focus
+      boxShadow: isFocused ? `0 0 0 1px ${ThemeColors.main}` : styles.boxShadow, // Optional: Add a box-shadow to mimic focus if needed
+      // Ensure outline is none and apply other focus styles directly without using ":focus" pseudo-class
+      outline: "none",
+      ":hover": {
+        ...styles[":focus"],
+        outline: "none",
+        borderColor: ThemeColors.main, // Your desired active border color
+        backgroundColor: "transparent", // Your desired active background color
+        color: ThemeColors.main, // Your desired active text color
+      },
+      minWidth: "10rem",
+      fontSize: "0.8rem",
+      svg: {
+        width: "0.9rem",
+      },
+    }),
+    option: (styles, { data, isDisabled, isFocused, isSelected }) => {
+      const color = chroma(ThemeColors.main);
+      return {
+        ...styles,
+        backgroundColor: isDisabled
+          ? undefined
+          : isSelected
+          ? data.color
+          : isFocused
+          ? color.alpha(0.1).css()
+          : undefined,
+        color: isDisabled
+          ? "#ccc"
+          : isSelected
+          ? chroma.contrast(color, "white") > 2
+            ? "white"
+            : "black"
+          : data.color,
+        cursor: isDisabled ? "not-allowed" : "default",
+
+        ":active": {
+          ...styles[":active"],
+          backgroundColor: !isDisabled
+            ? isSelected
+              ? data.color
+              : color.alpha(0.3).css()
+            : undefined,
+        },
+      };
+    },
+    //// The code below is an example of using the dot function to style the select component
+
+    // input: (styles) => ({ ...styles, ...dot() }),
+    // placeholder: (styles) => ({ ...styles, ...dot("#ccc") }),
+    // singleValue: (styles, { data }) => ({ ...styles, ...dot(data.color) }),
+
+    input: (styles) => ({ ...styles }),
+    placeholder: (styles) => ({ ...styles }),
+    singleValue: (styles) => ({ ...styles }),
+  },
 };
 
 export const THEME: DMTheme = {
