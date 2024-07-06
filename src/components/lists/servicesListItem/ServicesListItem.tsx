@@ -7,7 +7,7 @@ interface FooterListItemProps {
   title: string;
 }
 
-const FooterListItem = (props: FooterListItemProps) => {
+const ServicesListItem = (props: FooterListItemProps) => {
   const { title } = props;
   return (
     <Inline justify="start" gap={"m"}>
@@ -19,4 +19,4 @@ const FooterListItem = (props: FooterListItemProps) => {
   );
 };
 
-export default FooterListItem;
+export default ServicesListItem;

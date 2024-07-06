@@ -8,56 +8,40 @@ import {
   query,
   where,
 } from "firebase/firestore";
-import { app } from "../main";
+import { Dispatch } from "react";
+import { ISearchFilters } from "../components/searchBar/interfaces";
+import {
+  PropertiesActions,
+  Property,
+} from "../context/propertiesContext/propertiesReducer";
+import { app } from "../firebaseApp";
 
 // Function to get filtered real estate info
-export async function getFilteredRealEstateInfo(filters: {
-  city?: string;
-  minRooms?: number;
-  maxFloor?: number;
-  minYear?: number;
-  maxPrice?: number;
-}) {
-  console.log(filters);
+export async function getFilteredRealEstateInfo(
+  filters: ISearchFilters,
+  dispatch: Dispatch<PropertiesActions>
+) {
   const db = getFirestore(app); // Initialize Firestore
   let q: Query = collection(db, "real-estate-info");
-  q = query(
-    q,
-    where("apartment_rooms", ">=", filters.minRooms ?? 0),
-    where("apartment_floor", "<=", filters.maxFloor ?? 100),
-    where("building_construction_year", ">=", filters.minYear ?? 1940),
-    where("price_in_USD", "<=", filters.maxPrice ?? 5000000)
-  );
-  if (filters.city) {
+  console.log(typeof filters.maxPrice, "max");
+  if (filters.city === "All" || !filters.city) {
+    q = query(
+      q,
+      where("apartment_rooms", ">=", filters.minRooms ?? 0),
+      where("apartment_floor", "<=", filters.maxFloor ?? 100),
+      where("building_construction_year", ">=", filters.minYear ?? 1940),
+      where(
+        "price_in_USD",
+        "<=",
+        filters.maxPrice === 0 || !filters.maxPrice ? 5000000 : filters.maxPrice
+      )
+    );
+  }
+  if (filters.city && filters.city !== "All") {
     q = query(q, where("city", "==", filters.city));
   }
 
   q = query(q, orderBy("price_in_USD"));
-
-  // collection(db, "real-estate-info"),
-  //   where("city", "==", filters.city),
-  //   where("apartment_rooms", ">=", filters.minRooms),
-  //   where("apartment_floor", "<=", filters.maxFloor),
-  //   where("building_construction_year", ">=", filters.minYear),
-  //   where("price_in_USD", "<=", filters.maxPrice),
-  //   orderBy("city");
-
-  //Apply filters conditionally
-  // if (filters.city) {
-  //   q = query(q, where("city", "==", filters.city));
-  // }
-  // if (filters.rooms) {
-  //   q = query(q, where("apartment_rooms", "==", filters.rooms));
-  // }
-  // if (filters.maxFloor) {
-  //   q = query(q, where("apartment_floor", "<=", filters.maxFloor));
-  // }
-  // if (filters.minYear) {
-  //   q = query(q, where("building_construction_year", ">=", filters.minYear));
-  // }
-  // if (filters.maxPrice) {
-  //   q = query(q, where("price_in_USD", "<=", filters.maxPrice));
-  // }
 
   // Execute the query
   const querySnapshot = await getDocs(q);
@@ -65,6 +49,5 @@ export async function getFilteredRealEstateInfo(filters: {
   querySnapshot.forEach((doc) => {
     results.push(doc.data());
   });
-  console.log(querySnapshot);
-  return results;
+  dispatch({ type: "SET_PROPERTIES", payload: results as Property[] });
 }

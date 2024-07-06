@@ -1,0 +1,12 @@
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Rules for city_images folder
+    match /city_images/{allPaths=**} {
+      allow read: if true; // Publicly accessible
+    }
+    // Default rule for other paths
+    match /{allPaths=**} {
+      allow read, write: if request.auth != null; // Requires authentication
+    }
+  }
+}

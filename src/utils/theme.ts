@@ -1,8 +1,8 @@
-import { ITheme, theme } from "@cman430/sf-component-library";
+import { ITheme, theme as SFTheme } from "@cman430/sf-component-library";
 import chroma from "chroma-js";
 import { StylesConfig } from "react-select";
 
-export interface DMTheme extends ITheme {
+export interface CurrentTheme extends ITheme {
   colors: IThemeColors;
   fontSizes: IFontSizes;
   cssConstants: ICSSConstants;
@@ -31,6 +31,8 @@ export interface IThemeColors {
   border: string;
   footerText: string;
   footerBorder: string;
+  footerSubTitle: string;
+  footerBackground: string;
 }
 
 export const ThemeColors: IThemeColors = {
@@ -48,6 +50,8 @@ export const ThemeColors: IThemeColors = {
   border: "#E5E5EA",
   footerBorder: "#3A3A3C",
   footerText: "#F1FAEE",
+  footerSubTitle: "#3A3A3C",
+  footerBackground: "#1C1C1E",
 };
 
 export interface IFontSizes {
@@ -61,6 +65,13 @@ export interface IFontSizes {
   headerTitle: string;
   headerText: string;
   footerTitle: string;
+  cardTitle: string;
+  cardSubTitle: string;
+  cardInfo: string;
+  cardFooter: string;
+  cardInfoNum: string;
+  cardBuyingPrice: string;
+  cardRentingPrice: string;
   footerSub: string;
   footerTextSub: string;
   footerText: string;
@@ -78,6 +89,13 @@ export const FontSizes: IFontSizes = {
   headerText: "0.85rem",
   footerText: "0.85rem",
   footerTitle: "1.2rem",
+  cardTitle: "1.2rem",
+  cardSubTitle: "0.8rem",
+  cardInfo: "1rem",
+  cardFooter: "0.9rem",
+  cardInfoNum: "1rem",
+  cardBuyingPrice: "1.1rem",
+  cardRentingPrice: "0.9rem",
   footerSub: "0.7rem",
   footerTextSub: "0.825rem",
 };
@@ -164,10 +182,10 @@ export const SelectStyles: ISelectStyles = {
   },
 };
 
-export const THEME: DMTheme = {
+export const theme: CurrentTheme = {
   colors: ThemeColors,
   fontSizes: FontSizes,
   cssConstants: CSSConstants,
-  spaceSchema: theme.spaceSchema,
-  fractionsSchema: theme.fractionsSchema,
+  spaceSchema: SFTheme.spaceSchema,
+  fractionsSchema: SFTheme.fractionsSchema,
 };

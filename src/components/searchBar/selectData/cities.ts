@@ -1,6 +1,7 @@
 import { ISelectOption } from "../../../utils/theme";
 
 export const turkishCities: ISelectOption[] = [
+  { label: "All", value: "" },
   { label: "Adana", value: "Adana" },
   { label: "Adiyaman", value: "Adiyaman" },
   { label: "Afyonkarahisar", value: "Afyonkarahisar" },
