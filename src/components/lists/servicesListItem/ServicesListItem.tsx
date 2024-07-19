@@ -1,4 +1,4 @@
-import { Inline } from "@cman430/sf-component-library";
+import { Inline } from "@sfiller23/sf-component-library";
 import { Link } from "react-router-dom";
 import arrowToRight from "../../../assets/SVG/footerListIcon.svg";
 import Text from "../../common/typography/Text";

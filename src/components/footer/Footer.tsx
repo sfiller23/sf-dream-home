@@ -7,7 +7,7 @@ import {
   Pad,
   Rows,
   Vcentered,
-} from "@cman430/sf-component-library";
+} from "@sfiller23/sf-component-library";
 
 import { theme } from "../../utils/theme";
 import Text from "../common/typography/Text";

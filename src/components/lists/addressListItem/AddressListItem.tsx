@@ -1,5 +1,5 @@
-import { Rows } from "@cman430/sf-component-library";
-import Text, { ITextProps } from "../../common/typography/Text";
+import { Rows } from "@sfiller23/sf-component-library";
+import Text from "../../common/typography/Text";
 import { IAddressInfo } from "./addressInfo";
 
 const AddressTitle = (props: IAddressInfo) => {

@@ -1,4 +1,4 @@
-import { Card, Inline, Pad, Rows } from "@cman430/sf-component-library";
+import { Card, Inline, Pad, Rows } from "@sfiller23/sf-component-library";
 import { PropsWithChildren } from "react";
 import { IconType } from "react-icons";
 import { styled } from "styled-components";

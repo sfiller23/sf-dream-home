@@ -3,7 +3,7 @@ import {
   InputWrapper,
   Rows,
   Select,
-} from "@cman430/sf-component-library";
+} from "@sfiller23/sf-component-library";
 import { useContext, useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
@@ -44,12 +44,11 @@ const SearchBar = () => {
   const location = useLocation();
 
   const resetForm = () => {
-    setCity("All");
+    setCity("");
     setMinRooms("");
     setMaxFloor("");
     setMinYear("");
     setMaxPrice("");
-    navigate(`/properties?type=${type}`);
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {

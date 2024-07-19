@@ -1,4 +1,4 @@
-import { Columns, Pad, Rows } from "@cman430/sf-component-library";
+import { Columns, Pad, Rows } from "@sfiller23/sf-component-library";
 import styled from "styled-components";
 import bannerImg from "../../assets/images/banner-img.jpeg";
 import Text from "../../components/common/typography/Text";

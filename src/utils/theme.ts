@@ -1,11 +1,19 @@
-import { ITheme, theme as SFTheme } from "@cman430/sf-component-library";
+import { ITheme, theme as SFTheme } from "@sfiller23/sf-component-library";
 import chroma from "chroma-js";
 import { StylesConfig } from "react-select";
+import "styled-components";
 
 export interface CurrentTheme extends ITheme {
   colors: IThemeColors;
   fontSizes: IFontSizes;
   cssConstants: ICSSConstants;
+}
+
+declare module "styled-components" {
+  export interface DefaultTheme extends CurrentTheme {
+    colors: IThemeColors;
+    fontSizes: IFontSizes;
+  }
 }
 
 interface ICSSConstants {

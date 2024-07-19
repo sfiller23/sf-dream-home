@@ -1,4 +1,4 @@
-import { Columns, Button as SFButton } from "@cman430/sf-component-library";
+import { Columns, Button as SFButton } from "@sfiller23/sf-component-library";
 import { styled } from "styled-components";
 import { theme } from "../../../utils/theme";
 import Text from "../../common/typography/Text";

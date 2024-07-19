@@ -1,4 +1,7 @@
-import { ButtonProps, Button as SFButton } from "@cman430/sf-component-library";
+import {
+  ButtonProps,
+  Button as SFButton,
+} from "@sfiller23/sf-component-library";
 import styled from "styled-components";
 import { theme } from "../../../utils/theme";
 

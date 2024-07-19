@@ -1,4 +1,4 @@
-import { Columns, Inline, Rows } from "@cman430/sf-component-library";
+import { Columns, Inline, Rows } from "@sfiller23/sf-component-library";
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaLinkedin, FaSquareTwitter } from "react-icons/fa6";
 import { ImFacebook2 } from "react-icons/im";
@@ -35,7 +35,12 @@ const Header = () => {
           <Text weight={700} size="headerTitle">
             Turkish Dream home
           </Text>
-          <Text weight={200} color="textNote" size="headerText" spacing="2px">
+          <Text
+            weight={200}
+            color="textNote"
+            size="headerText"
+            letterSpacing="2px"
+          >
             Real Estate
           </Text>
         </Rows>
