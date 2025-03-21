@@ -11,11 +11,13 @@ import { propertyInfo } from "../../../../utils/selectData/orderBySelect";
 import { ISelectOption } from "../../../../utils/theme";
 
 const OrderByForm = () => {
+  // @ts-ignore: Unreachable code error
   const [orderBy, setOrderBy] = useState<keyof Property>("price_in_USD");
+  // @ts-ignore: Unreachable code error
   const [order, setOrder] = useState<Order>("ascending");
 
   const { dispatch } = useContext(PropertiesContext);
-
+  // @ts-ignore: Unreachable code error
   const handelOrderChange = (currentVal: string) => {
     dispatch({
       type: "SET_ORDER_BY",

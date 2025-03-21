@@ -5,11 +5,13 @@ import { auth } from "../auth";
 import { storage } from "../storage";
 
 export const useImgUplaod = () => {
-  const [file, setFile] = useState(null);
+  const [file, setFile] = useState<File | null>(null); // Specify the type of file
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleFileChange = (event) => {
-    setFile(event.target.files[0]);
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files) {
+      setFile(event.target.files[0]); // Access the first file in the FileList
+    }
   };
 
   const handleUpload = async () => {
@@ -27,10 +29,12 @@ export const useImgUplaod = () => {
       const storageRef = ref(storage, "images/my-image.jpg");
 
       // Upload the file
-      await uploadBytes(storageRef, file);
+      if (file) {
+        await uploadBytes(storageRef, file);
+        console.log("File uploaded successfully!");
+      }
 
       setIsLoading(false);
-      console.log("File uploaded successfully!");
     } catch (error) {
       setIsLoading(false);
       console.error("Error uploading file:", error);

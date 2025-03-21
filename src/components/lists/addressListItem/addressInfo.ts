@@ -1,6 +1,6 @@
 import { ITextProps } from "../../common/typography/Text";
 
-export interface IAddressInfo extends ITextProps {
+export interface IAddressInfo extends Omit<ITextProps, "children"> {
   title?: string;
   description: string;
 }

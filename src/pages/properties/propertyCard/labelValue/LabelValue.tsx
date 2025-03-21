@@ -23,13 +23,12 @@ const LabelValue = (props: ILebalValue) => {
     gap,
     size,
     weight,
-    justify,
     width,
   } = props;
   return (
-    <Inline gap={gap} justify={justify} width={width}>
+    <Inline gap={gap} width={width}>
       <Text color={labelColor} size={size} weight={weight}>
-        {label}:
+        {`${label}:`}
       </Text>
       <Text color={valueColor} size={size} weight={weight}>
         {value.toLocaleString()}
