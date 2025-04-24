@@ -23,7 +23,7 @@ export async function getFilteredRealEstateInfo(
 ) {
   const db = getFirestore(app); // Initialize Firestore
   let q: Query = collection(db, "real-estate-info");
-  console.log(typeof filters.maxPrice, "max");
+
   if (filters.city === "All" || !filters.city) {
     q = query(
       q,

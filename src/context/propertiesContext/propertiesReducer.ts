@@ -61,7 +61,7 @@ export const propertiesReducer = (
       return { ...state, properties: action.payload };
     case "SET_CITY":
       return { ...state, city: action.payload };
-    case "SET_ORDER_BY":
+    case "SET_ORDER_BY": {
       const sortedProperties = [...state.properties].sort(
         (a: Property, b: Property) => {
           if (action.payload.order === "ascending") {
@@ -76,6 +76,7 @@ export const propertiesReducer = (
         properties: sortedProperties,
         orderBy: action.payload,
       };
+    }
     default:
       return state;
   }

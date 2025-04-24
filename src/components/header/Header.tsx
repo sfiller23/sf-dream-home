@@ -2,7 +2,7 @@ import { Columns, Inline, Rows } from "@sfiller23/sf-component-library";
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaLinkedin, FaSquareTwitter } from "react-icons/fa6";
 import { ImFacebook2 } from "react-icons/im";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
 import auth from "../../assets/SVG/auth.svg";
 import house from "../../assets/SVG/house.svg";
@@ -27,9 +27,16 @@ const StyledLink = styled(Link)`
 `;
 
 const Header = () => {
+  const navigate = useNavigate();
   return (
     <StyledHeader as="header" align="center" justify="midSpace">
-      <Columns evenly="false" gap="l">
+      <Columns
+        evenly="false"
+        gap="l"
+        onClick={() => {
+          navigate("/");
+        }}
+      >
         <img src={logo} alt="Site logo" />
         <Rows justify="start">
           <Text weight={700} size="headerTitle">

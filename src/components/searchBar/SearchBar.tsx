@@ -89,7 +89,6 @@ const SearchBar = () => {
         minYear = "",
         maxPrice = "",
       } = currentSearchObj;
-      console.log(city);
       setType(type as "rent" | "buy");
       setCity(city);
       setMinRooms(minRooms);

@@ -6,5 +6,4 @@ export const propertyInfo: ISelectOption[] = [
   { label: "Floor", value: "apartment_floor" },
   { label: "Beds", value: "apartment_bedrooms" },
   { label: "Baths", value: "apartment_bathrooms" },
-  { label: "Size", value: "apartment_total_area" },
 ];

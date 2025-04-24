@@ -29,7 +29,6 @@ export const PropertiesProvider = ({ children }: PropsWithChildren) => {
     propertiesReducer,
     initState
   );
-  console.log([properties], "from context");
   return (
     <PropertiesContext.Provider
       value={{
